@@ -1,0 +1,43 @@
+<link rel= "stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css')}}">
+
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <div id="loader" class="w10 hiddenToggle foreground">
+            <div class="p3">
+                <h1>Loading...</h1>
+                <progress id="progress" value="0" max="13"></progress>
+            </div>
+        </div>
+        <div class="w10 wrapper-vertical">
+            <div class="w10 wrapper-vertical foreground">
+                <h1>Song Uploader</h1>
+
+                <form id="uploadSongUrl" action="/upload" method="post">
+                    <input type="text" id="song_url" name="song_url" placeholder="Insert YouTube URL">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <div id="songInfo" class="w10 wrapper-vertical hiddenToggle">
+                <div class="p3 wrapper-vertical">
+                    <h2 id="song_name"></h2>
+                </div>
+    
+                <div class="p3 wrapper-vertical">
+                    <h3>Song Lyrics</h3>
+                    <p id="song_lyrics"></p>
+                </div>
+    
+                <div class="p3 wrapper-vertical">
+                    <h3>Meaning</h3>
+                    <p id="song_meaning"></p>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='script.js')}}"></script>
+    </body>
+</html>
